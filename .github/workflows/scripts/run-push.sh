@@ -76,6 +76,8 @@ _setup_CLI(){
     export DOTCMS_CLIENT_SERVERS_DEFAULT=$API_URL
     export QUARKUS_LOG_FILE_PATH=$DOT_CLI_HOME"dotcms-cli.log"
 
+    touch "$QUARKUS_LOG_FILE_PATH"
+
 }
 
 print_log(){
@@ -84,6 +86,12 @@ print_log(){
 }
 
 _run_cli_push(){
+
+      echo "Running dot-cli push command"
+      echo "Pushing workspace: $1"
+      echo "Pushing token: $2"
+      echo "Pushing options: $3"
+
       workspace_path=$1
       token=$2
       push_opts=$3
